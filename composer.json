@@ -1,6 +1,6 @@
 {
   "name": "faso-dev/simple-curl-client",
-  "description": "An  small client that wrap curl",
+  "description": "A small client that wrap curl for get and post request",
   "type": "library",
   "require": {
     "php": ">=7.4.0",
