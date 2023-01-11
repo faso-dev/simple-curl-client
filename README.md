@@ -48,6 +48,17 @@ $client->post('https://httpbin.org/post', ['foo' => 'bar'], [
     CURLOPT_SSL_VERIFYPEER => true,
 ]);
 ```
+The `get` method is used to make a GET request and have theses parameters:
+- `$url` (string): The URL to make the request.
+- `$queries` (array): The query parameters to add to the URL.
+- `$options` (array): The options to add to the request.
+Note that we have a `headers` key in the `$options` array to add the headers to the request.
+
+The `post` method is used to make a POST request and have theses parameters:
+- `$url` (string): The URL to make the request.
+- `$data` (array): The data to send to the URL.
+- `$options` (array): The options to add to the request.
+Note that we have a `headers` key in the `$options` array to add the headers to the request.
 
 ## Contributing
 
