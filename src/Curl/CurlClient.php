@@ -127,30 +127,6 @@
 			);
 		}
 		
-		public function enableDebug(): self
-		{
-			$this->options[CURLOPT_VERBOSE] = true;
-			return $this;
-		}
-		
-		public function disableDebug(): self
-		{
-			$this->options[CURLOPT_VERBOSE] = false;
-			return $this;
-		}
-		
-		public function enableSSLVerification(): self
-		{
-			$this->options[CURLOPT_SSL_VERIFYPEER] = true;
-			return $this;
-		}
-		
-		public function disableSSLVerification(): self
-		{
-			$this->options[CURLOPT_SSL_VERIFYPEER] = false;
-			return $this;
-		}
-		
 		public function __destruct()
 		{
 			curl_close($this->curl);
