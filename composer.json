@@ -1,0 +1,34 @@
+{
+  "name": "faso-dev/simple-curl-client",
+  "description": "An  small client that wrap curl",
+  "type": "library",
+  "require": {
+    "php": ">=7.4.0",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9.5.27"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "FasoDev\\SimpleCurlClient\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "FasoDev\\SimpleCurlClient\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jerome Onadja",
+      "email": "jeromeonadja28@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "scripts": {
+    "test": "./vendor/bin/phpunit --configuration phpunit.xml"
+  }
+}
