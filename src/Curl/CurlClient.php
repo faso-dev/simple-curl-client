@@ -67,7 +67,7 @@
 		private function request(
 			string $url,
 			string $method,
-			array  $data = [],
+			       $data = [],
 			array  $options = []
 		): ClientResponseInterface
 		{
