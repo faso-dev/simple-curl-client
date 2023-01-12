@@ -54,7 +54,7 @@
 		 */
 		public function post(
 			string $url,
-			array  $data = [],
+			       $data = [],
 			array  $options = []
 		): ClientResponseInterface
 		{
