@@ -71,7 +71,7 @@
 			array  $options = []
 		): ClientResponseInterface
 		{
-			$headers = $options['headers'] ?? [];
+			$headers = $this->convertHeaders($options['headers'] ?? []);
 			unset($options['headers']);
 			$defaultRequestOptions = [
 					CURLOPT_URL => $url,
@@ -158,5 +158,15 @@
 				$this->curl,
 				$this->options + $options
 			);
+		}
+		
+		private function convertHeaders(array $headers = []): array
+		{
+			$convertedHeaders = [];
+			foreach ($headers as $key => $value) {
+				$convertedHeaders[] = $key . ': ' . $value;
+			}
+			
+			return $convertedHeaders;
 		}
 	}
