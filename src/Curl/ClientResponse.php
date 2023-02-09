@@ -3,6 +3,7 @@
 	namespace FasoDev\SimpleCurlClient\Curl;
 	
 	use FasoDev\SimpleCurlClient\Http\ClientResponseInterface;
+	use function json_decode;
 	
 	class ClientResponse implements ClientResponseInterface
 	{
@@ -40,6 +41,22 @@
 		public function json(): array
 		{
 			return json_decode($this->body, true);
+		}
+		
+		public function xmlArray(): array
+		{
+			return json_decode(json_encode(simplexml_load_string(
+				"<response>{$this->body}</response>"
+			)), true);
+		}
+		
+		public function xmlObject(): object
+		{
+			return json_decode(
+				json_encode(simplexml_load_string(
+					"<response>{$this->body}</response>"
+				))
+			);
 		}
 	}
 
